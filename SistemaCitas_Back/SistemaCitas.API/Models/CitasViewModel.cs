@@ -17,9 +17,5 @@ namespace SistemaCitas.API.Models
         public string Cita_Detalles { get; set; }
 
         public string Cita_Estado { get; set; }
-
-        public virtual Clientes Clie { get; set; }
-
-        public virtual Especialidades Espe { get; set; }
     }
 }

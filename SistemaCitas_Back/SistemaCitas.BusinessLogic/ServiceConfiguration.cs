@@ -10,6 +10,7 @@ namespace SistemaCitas.BusinessLogic
         public static void DataAccess(this IServiceCollection services, string connectionString)
         {
             services.AddScoped<CitasRepository>();
+            services.AddScoped<EspecialidadRepository>();
             SistemaCitas_Context.BuildConnectionString(connectionString);
         }
 

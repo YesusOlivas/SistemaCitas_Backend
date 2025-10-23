@@ -10,6 +10,7 @@ namespace SistemaCitas.API.Extensions
         public MappingProfileExtensions()
         {
             CreateMap<Citas, CitasViewModel>().ReverseMap();
+            CreateMap<Especialidades, EspecialidadesViewModel>().ReverseMap();
         }
     }
 }

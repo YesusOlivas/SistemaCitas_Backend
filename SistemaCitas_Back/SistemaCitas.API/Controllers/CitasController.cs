@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using SistemaCitas.API.Models;
 using SistemaCitas.BusinessLogic.Services;
+using SistemaCitas.Entities.Entities;
 
 namespace SistemaCitas.API.Controllers
 {
@@ -22,6 +25,22 @@ namespace SistemaCitas.API.Controllers
         {
             var list = _services.ListarCitasPorCliente(clienteId);
             return Ok(list);
+        }
+
+        [HttpPost("InsertarCita")]
+        public IActionResult InsertarCitas([FromBody] CitasViewModel citas)
+        {
+            var mapped = _mapper.Map<Citas>(citas);
+            var insert = _services.InsertarCitas(mapped);
+            return Ok(insert);
+        }
+
+        [HttpPost("CancelarCita")]
+        public IActionResult CancelarCita([FromBody] CitasViewModel citas)
+        {
+            var mapped = _mapper.Map<Citas>(citas);
+            var cancel = _services.CancelarCita(mapped);
+            return Ok(cancel);
         }
     }
 }

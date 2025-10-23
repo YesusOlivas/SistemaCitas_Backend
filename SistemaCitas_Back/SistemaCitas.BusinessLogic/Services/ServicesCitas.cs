@@ -62,6 +62,7 @@ namespace SistemaCitas.BusinessLogic.Services
             }
         }
 
+        //Cancelar Cita
         public RequestStatus CancelarCita(Citas citas)
         {
             try
@@ -72,6 +73,7 @@ namespace SistemaCitas.BusinessLogic.Services
                 // Retorno del estado de la solicitud
                 return result;
             }
+            // Excepción manejada
             catch (Exception ex)
             {
                 // En caso de error, se retorna un estado de solicitud con código 0 y mensaje de error
@@ -99,7 +101,28 @@ namespace SistemaCitas.BusinessLogic.Services
                 IEnumerable<Especialidades> especialidades = null;
                 return especialidades;
             }
-        #endregion
         }
+        #endregion
+
+        #region Usuarios
+        //Iniciar Sesión
+        public RequestStatus IniciarSesion(Usuarios usuarios)
+        {
+            try
+            {
+                // Llamada al repositorio para iniciar sesión
+                var result = new UsuarioRepository().IniciarSesion(usuarios);
+
+                // Retorno del estado de la solicitud
+                return result;
+            }
+            // Excepción manejada
+            catch (Exception ex)
+            {
+                // En caso de error, se retorna un estado de solicitud con código 0 y mensaje de error
+                return new RequestStatus { CodeStatus = 0, MessageStatus = ex.Message };
+            }
+        }
+        #endregion
     }
 }

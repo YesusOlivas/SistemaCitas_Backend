@@ -11,6 +11,7 @@ namespace SistemaCitas.BusinessLogic
         {
             services.AddScoped<CitasRepository>();
             services.AddScoped<EspecialidadRepository>();
+            services.AddScoped<UsuarioRepository>();
             SistemaCitas_Context.BuildConnectionString(connectionString);
         }
 

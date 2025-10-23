@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaCitas.Entities", "SistemaCitas.Entities\SistemaCitas.Entities.csproj", "{E42CF002-B26E-4B09-8169-92DA578DA0B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaCitas.DataAccess", "SistemaCitas.DataAccess\SistemaCitas.DataAccess.csproj", "{735E903B-AD20-46F3-9917-3C3D0DCEA2A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaCitas.BusinessLogic", "SistemaCitas.BusinessLogic\SistemaCitas.BusinessLogic.csproj", "{D78947D2-2D95-444A-8278-C37515DC90DD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{735E903B-AD20-46F3-9917-3C3D0DCEA2A7} = {735E903B-AD20-46F3-9917-3C3D0DCEA2A7}
+		{E42CF002-B26E-4B09-8169-92DA578DA0B1} = {E42CF002-B26E-4B09-8169-92DA578DA0B1}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaCitas.API", "SistemaCitas.API\SistemaCitas.API.csproj", "{D0891879-D7BF-4C3E-853E-78AF5F514061}"
+	ProjectSection(ProjectDependencies) = postProject
+		{735E903B-AD20-46F3-9917-3C3D0DCEA2A7} = {735E903B-AD20-46F3-9917-3C3D0DCEA2A7}
+		{D78947D2-2D95-444A-8278-C37515DC90DD} = {D78947D2-2D95-444A-8278-C37515DC90DD}
+		{E42CF002-B26E-4B09-8169-92DA578DA0B1} = {E42CF002-B26E-4B09-8169-92DA578DA0B1}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E42CF002-B26E-4B09-8169-92DA578DA0B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E42CF002-B26E-4B09-8169-92DA578DA0B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E42CF002-B26E-4B09-8169-92DA578DA0B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E42CF002-B26E-4B09-8169-92DA578DA0B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{735E903B-AD20-46F3-9917-3C3D0DCEA2A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{735E903B-AD20-46F3-9917-3C3D0DCEA2A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{735E903B-AD20-46F3-9917-3C3D0DCEA2A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{735E903B-AD20-46F3-9917-3C3D0DCEA2A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D78947D2-2D95-444A-8278-C37515DC90DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D78947D2-2D95-444A-8278-C37515DC90DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D78947D2-2D95-444A-8278-C37515DC90DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D78947D2-2D95-444A-8278-C37515DC90DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0891879-D7BF-4C3E-853E-78AF5F514061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0891879-D7BF-4C3E-853E-78AF5F514061}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0891879-D7BF-4C3E-853E-78AF5F514061}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0891879-D7BF-4C3E-853E-78AF5F514061}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AFCC2FBD-B880-4637-B260-8B7A214D5BEC}
+	EndGlobalSection
+EndGlobal

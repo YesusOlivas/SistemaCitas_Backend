@@ -2,11 +2,18 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SistemaCitas.Entities.Entities;
 
 public partial class Clientes
 {
+    [NotMapped]
+    public string Usua_Nombre { get; set; }
+
+    [NotMapped]
+    public string Usua_Contraseña { get; set; }
+
     public int Clie_Id { get; set; }
 
     public string Clie_Dni { get; set; }

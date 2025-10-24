@@ -51,7 +51,7 @@ namespace SistemaCitas.DataAccess.Repositorios
             parametros.Add("p_Clie_Id", citas.Clie_Id, DbType.Int32, ParameterDirection.Input);
             parametros.Add("p_Espe_Id", citas.Espe_Id, DbType.Int32, ParameterDirection.Input);
             parametros.Add("p_Cita_Fecha", citas.Cita_Fecha, DbType.Date, ParameterDirection.Input);
-            parametros.Add("p_Cita_Hora", citas.Cita_Hora, DbType.Time, ParameterDirection.Input);
+            parametros.Add("p_Cita_Hora", citas.Cita_Hora, DbType.DateTime, ParameterDirection.Input);
             parametros.Add("p_Cita_Detalles", citas.Cita_Detalles, DbType.String, ParameterDirection.Input);
             parametros.Add("p_Cita_Estado", citas.Cita_Estado, DbType.String, ParameterDirection.Input);
 

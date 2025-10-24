@@ -12,6 +12,7 @@ namespace SistemaCitas.API.Extensions
             CreateMap<Citas, CitasViewModel>().ReverseMap();
             CreateMap<Especialidades, EspecialidadesViewModel>().ReverseMap();
             CreateMap<Usuarios, UsuarioViewModel>().ReverseMap();
+            CreateMap<Clientes, ClienteViewModel>().ReverseMap();
         }
     }
 }

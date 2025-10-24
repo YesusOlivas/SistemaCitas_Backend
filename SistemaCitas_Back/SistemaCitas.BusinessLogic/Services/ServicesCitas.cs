@@ -13,12 +13,16 @@ namespace SistemaCitas.BusinessLogic.Services
         // Repositories
         private readonly CitasRepository _citasRepository;
         private readonly EspecialidadRepository _especialidadRepository;
+        private readonly UsuarioRepository _usuarioRepository;
+        private readonly ClientesRepository _clientesRepository;
 
         //  Contructor para inyeccion de los repositories
-        public ServicesCitas(CitasRepository citasRepository, EspecialidadRepository especialidadRepository)
+        public ServicesCitas(CitasRepository citasRepository, EspecialidadRepository especialidadRepository, UsuarioRepository usuarioRepository, ClientesRepository clientesRepository)
         {
             _citasRepository = citasRepository;
             _especialidadRepository = especialidadRepository;
+            _clientesRepository = clientesRepository;
+            _usuarioRepository = usuarioRepository;
         }
 
         #region Citas
@@ -111,7 +115,29 @@ namespace SistemaCitas.BusinessLogic.Services
             try
             {
                 // Llamada al repositorio para iniciar sesión
-                var result = new UsuarioRepository().IniciarSesion(usuarios);
+                var result = _usuarioRepository.IniciarSesion(usuarios);
+
+                // Retorno del estado de la solicitud
+                return result;
+            }
+            // Excepción manejada
+            catch (Exception ex)
+            {
+                // En caso de error, se retorna un estado de solicitud con código 0 y mensaje de error
+                return new RequestStatus { CodeStatus = 0, MessageStatus = ex.Message };
+            }
+        }
+        #endregion
+
+        #region Cliente
+
+        //Insertar Cliente
+        public RequestStatus RegistrarCliente(Clientes clientes)
+        {
+            try
+            {
+                // Llamada al repositorio para insertar el cliente
+                var result = _clientesRepository.RegistrarCliente(clientes);
 
                 // Retorno del estado de la solicitud
                 return result;
